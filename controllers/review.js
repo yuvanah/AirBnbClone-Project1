@@ -2,7 +2,7 @@ const Review = require("../models/reviews.js");
 const Listing = require("../models/listing.js");
 
 module.exports.createReview = async(req,res)=>{
-// without req.params lisitng gives null or undefined value -->watch lec for reason
+
    let listing = await Listing.findById(req.params.id);
    let newReview = new Review(req.body.review);
   newReview.author = req.user._id;
